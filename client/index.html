@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="lib/jquery/dist/jquery.js"></script>
+        <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular-resource/angular-resource.js"></script>
+        <script src="js/lb-services.js"></script>
+        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container p-5" ng-app="myHouses" ng-controller="myHouseController">
+        <div class="col-md-6 mx-auto bg-light border">
+            <div class="row justify-content-center p-5 shadow">
+                <h1 class="text-danger">Houses's List</h1>
+            </div>
+            <div class="row justify-content-center p-5">
+                <input ng-model="newHouse" placeholder="add name" class="form-control">
+                <input ng-model="newHouse" placeholder="add address" class="form-control">
+                <input ng-model="newHouse" placeholder="add postal code" class="form-control">
+                <input ng-model="newHouse" placeholder="add city" class="form-control">
+                <input ng-model="newHouse" placeholder="add country" class="form-control">
+
+                <button class="btn btn-primary btn-sm btn-block mt-3" ng-click="pushHouse()">Add</button>
+            </div>
+            <ul ng-repeat="i in houses" class="row justify-content-center p-1">
+                {{i.name}}
+                <span ng-click="deleteHouse($index)" class="btn btn-danger btn-sm ml-3">x</span>
+            </ul>    
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

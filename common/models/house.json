@@ -1,0 +1,45 @@
+{
+  "name": "house",
+  "plural": "houses",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "postalCode": {
+      "type": "number",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "drivers": {
+      "type": "hasMany",
+      "model": "driver",
+      "foreignKey": "houseId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
